@@ -6,5 +6,5 @@
 
 ## Bienvenido a Swift
 
-* [Bienvenido a Swift](bienvenido/chapter1.md)
+* [Acerca de Swift](bienvenido/chapter1.md)
 
