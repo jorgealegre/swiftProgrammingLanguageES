@@ -1,1 +1,1 @@
-* [Bienvenido a Swift](bienvenido/chapter1.md)
+* [Bienvenido a Swift](chapter1.md)
