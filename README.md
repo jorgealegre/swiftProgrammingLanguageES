@@ -4,6 +4,9 @@ Esto es una traducción no oficial del [libro original](https://swift.org/docume
 ### Versión 4.0.3
 El libro está al día con la versión 4.0.3 del lenguaje Swift.
 
+### Swift
+La palabra *swift* significa **agil**, **rápido**, **veloz**, etc.
+
 ### Objetivo
 El objetivo de este libro es ayudar a que más personas tengan acceso al maravilloso lenguaje de programación **Swift**. Además, me sirve a mí para pulir mis conocimientos.
 
