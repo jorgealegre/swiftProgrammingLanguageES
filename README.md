@@ -1,3 +1,11 @@
-# My Awesome Book
+# El Lenguaje De Programación Swift
+Esto es una traducción no oficial del [libro original](https://swift.org/documentation/#the-swift-programming-language) del lenguaje de programación Swift.
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+### Versión 4.0.3
+El libro está al día con la versión 4.0.3 del lenguaje Swift.
+
+### Objetivo
+El objetivo de este libro es ayudar a que más personas tengan acceso al maravilloso lenguaje de programación **Swift**. Además, me sirve a mí para pulir mis conocimientos.
+
+### Acerca del autor
+Mi nombre es Jorge Alegre. Soy un estudiante de Ciencias de la Computación. Estoy enamorado de lo que estudio y aun más del lenguaje de programación Swift.
