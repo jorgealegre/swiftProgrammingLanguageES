@@ -8,7 +8,7 @@ Swift elimina gran cantidad de tipos de errores comunes en la programación al i
 * Las variables siempre están inicializadas antes de su uso.
 * Índices de arreglos son controlados para evitar errores del tipo _fuera de rango_.
 * Los enteros son controlados por **TODO OVERFLOW**.
-* Opcionales garantizan de que valores nulos sean manejados explícitamente.
+* Opcionales garantizan de que valores `nil` (nulos) sean manejados explícitamente.
 * La memoria es administrada automáticamente.
 * Manejo de errores permite recuperarse de manera controlada de fallas inexperadas.
 
