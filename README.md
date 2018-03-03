@@ -1,8 +1,8 @@
 # El Lenguaje De Programación Swift
 Esto es una traducción no oficial del [libro original](https://swift.org/documentation/#the-swift-programming-language) del lenguaje de programación Swift.
 
-### Versión 4.0.3
-El libro está al día con la versión 4.0.3 del lenguaje Swift.
+### Versión 4.1
+El libro está al día con la versión 4.1 del lenguaje Swift.
 
 ### Swift
 La palabra *swift* significa **agil**, **rápido**, **veloz**, etc. Al ver código en Swift será evidente el por qué nombre del lenguaje.
