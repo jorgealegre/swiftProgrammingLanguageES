@@ -1,14 +1,14 @@
 # Compatibilidad con versiones
 Este libro describe Swift 4.1, la versión de Swift por defecto incluida en Xcode 9.2. Se puede usar Xcode 9.2 para compilar **TODO targets** escritos ya sea en Swift 4 o Swift 3.
 
->###### NOTA
+> ###### NOTA
 
-> When the Swift 4 compiler is working with Swift 3 code, it identifies its language version as 3.2. As a result, you can use conditional compilation blocks like `#if swift(>=3.2)` to write code that’s compatible with multiple versions of the Swift compiler.
+> Cuando el compilador de Swift 4 está trabajando sobre código en Swift 3, identifica el lenguaje con la versión 3.2. En consecuencia, se puede usar bloques de compilación condicional como `#if swift(>=3.2)` para escribir código compatible con múltiples versiones del compilador de Swift.
 
->When you use Xcode 9.2 to build Swift 3 code, most of the new Swift 4 functionality is available. That said, the following features are available only to Swift 4 code:
+> Cuando se usa Xcode 9.2 para compilar código de Swift 3, la gran mayoría de las funcionalidades nuevas de Swift 4 están disponibles. Sin embargo, las siguientes características solo están disponibles para código en Swift 4:
 
->* Substring operations return an instance of the `Substring` type, instead of `String`.
-* The `@objc` attribute is implicitly added in fewer places.
-* Extensions to a type in the same file can access that type’s private members.
+> * Operaciones _substring_ devuelven instancias del tipo `Substring`, no del tipo `String`.
+* El atributo `@objc` as insertado implícitamente en menos lugares.
+* Extensiones sobre un tipo en el mismo archivo pueden acceder propiedades privadas de ese tipo.
 
->A target written in Swift 4 can depend on a target that’s written in Swift 3, and vice versa. This means, if you have a large project that’s divided into multiple frameworks, you can migrate your code from Swift 3 to Swift 4 one framework at a time.
+> Un _target_ escrito en Swift 4 puede depender de un _target_ escrito en Swift 3 y vice versa. Esto significa que si se tiene un proyecto grande dividido en varios _frameworks_, se puede migrar el código de Swift 3 a Swift 4 de a un _framework_.
