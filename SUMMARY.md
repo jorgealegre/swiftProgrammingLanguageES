@@ -1,9 +1,7 @@
-# Introducción
+# Table of contents
 
 * [Introducción](README.md)
+* [Acerca de Swift](acerca-de-swift.md)
+* [Compatibilidad con versiones](compatibilidad-con-versiones.md)
+* [Una guía Swift](una-guia-swift.md)
 
-# Bienvenido a Swift
-
-* [Acerca de Swift](bienvenido/chapter1.md)
-* [Compatibilidad con versiones](bienvenido/compatibilidad-con-versiones.md)
-* [Una guía Swift](bienvenido/una-guia-swift.md)
