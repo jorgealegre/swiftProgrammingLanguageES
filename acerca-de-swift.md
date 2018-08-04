@@ -1,2 +1,0 @@
-# Acerca de Swift
-

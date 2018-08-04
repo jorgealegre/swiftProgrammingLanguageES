@@ -4,7 +4,7 @@
 
 ## Bienvenido
 
-* [Acerca de Swift](acerca-de-swift.md)
-* [Compatibilidad con versiones](compatibilidad-con-versiones.md)
-* [Una guía Swift](una-guia-swift.md)
+* [Acerca de Swift](bienvenido/acerca-de-swift.md)
+* [Compatibilidad con versiones](bienvenido/compatibilidad-con-versiones.md)
+* [Una guía Swift](bienvenido/una-guia-swift.md)
 
