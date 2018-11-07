@@ -565,3 +565,96 @@ let ace = Rank.ace
 let aceRawValue = ace.rawValue
 ```
 
+{% hint style="success" %}
+EXPERIMENTO  
+Escribe una función que compare dos valores de tipo `Rank` por sus `rawValue` \(i.e. valor crudo\).
+{% endhint %}
+
+Por defecto, Swift asigna los valores crudos empezando desde cero e incrementando de a uno para cada caso. Se puede cambiar este comportamiento especificando explícitamente los valores. En el ejemplo de arriba, `Ace` recibe un valor crudo explícito de `1` y el resto de los valores crudos son asignados en orden. También se pueden usar _strings_ o números de punto flotante como el tipo crudo de una enumeración. Usa la propiedad `rawValue` para acceder al valor crudo de un caso de una enumeración.
+
+Usa el inicializador `init?(rawValue:)` para crear una instancia de la enumeración a partir de un valor crudo. Devuelve un caso de la enumeración si existe el caso que coincida con el valor dado o nulo si no existe el caso.
+
+```swift
+if let convertedRank = Rank(rawValue: 3) {
+    let threeDescription = convertedRank.simpleDescription()
+}
+```
+
+The case values of an enumeration are actual values, not just another way of writing their raw values. In fact, in cases where there isn’t a meaningful raw value, you don’t have to provide one.
+
+Los valores de casos de una enumeración son valores reales, no solo otra forma de escribir sus valores crudos. De hecho, en casos donde no hay un valor crudo significativo, no es necesario proveer uno.
+
+```swift
+enum Suit {
+    case spades, hearts, diamonds, clubs
+
+    func simpleDescription() -> String {
+        switch self {
+        case .spades:
+            return "spades"
+        case .hearts:
+            return "hearts"
+        case .diamonds:
+            return "diamonds"
+        case .clubs:
+            return "clubs"
+        }
+    }
+}
+let hearts = Suit.hearts
+let heartsDescription = hearts.simpleDescription()
+```
+
+{% hint style="success" %}
+EXPERIMENTO  
+Agrega un método `color()` a `Suit` que retorna `"black"` para `spades` y `clubs` y `"red"` para `hearts` y `diamonds`.
+{% endhint %}
+
+Observa las dos maneras de referenciar al caso `hearts` arriba: cuando se asigna el valor a la constante `hearts`, el caso `Suit.hearts` es referenciado por su nombre completo porque la constante no tiene el tipo explícitamente especificado. Dentro del _switch_, el caso es referenciado por su forma abreviaddad `.hearts` porque se sabe que el tipo de `self` es `Suit`. Se puede usar la manera abreviada cada vez que el tipo se conoce por adelantado.
+
+Si una enumeración tiene valores crudos, esos valores son determinados como parte de la declaración, lo que significa que cada instancia de un caso particular siempre tiene el mismo valor crudo. Otra posibilidad para casos en enumeraciones es que tengan valores asociados. Estos valores son determinados a la hora de crear una instancia y pueden ser distintos para cada instancia de un caso. Se lo puede ver como que los valores asociados tienes propiedades almacenadas distintas para cada instancia. Por ejemplo, considerar el caso de pedir la hora del amanecer y atardecer a un servidor. El servidor puede responder ya sea la información correcta o una descripción del error que ocurra.
+
+```swift
+enum ServerResponse {
+    case result(String, String)
+    case failure(String)
+}
+
+let success = ServerResponse.result("6:00 am", "8:09 pm")
+let failure = ServerResponse.failure("Out of cheese.")
+
+switch success {
+case let .result(sunrise, sunset):
+    print("Sunrise is at \(sunrise) and sunset is at \(sunset).")
+case let .failure(message):
+    print("Failure...  \(message)")
+}
+// Imprime "Sunrise is at 6:00 am and sunset is at 8:09 pm."
+```
+
+{% hint style="success" %}
+EXPERIMENTO  
+Agrega un tercer caso a `ServerResponse` y al `switch`.
+{% endhint %}
+
+Observa como se obtienen las horas del amanecer y atardecer en el mismo lugar donde se compara la instancia particular con los casos posibles en el switch.
+
+Usa struct para crear estructuras. Estructuras soportan mucho del comportamiento de clases como propiedades e inicializadores. Una de las principales diferencias que tienen con clases es que las estructuras siempre se copian cuando se pasan de un lugar al otro en tu código mientras que las clases se pasan por referencia.
+
+```swift
+struct Card {
+    var rank: Rank
+    var suit: Suit
+    func simpleDescription() -> String {
+        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+    }
+}
+let threeOfSpades = Card(rank: .three, suit: .spades)
+let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+```
+
+{% hint style="success" %}
+EXPERIMENTO  
+Escribe una función que devuelva un arreglo con un mazo completo de cartas, con una carta para cada combinación de rango y palo \(`Rank` y `Suit`\).
+{% endhint %}
+
