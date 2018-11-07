@@ -734,3 +734,142 @@ Aunque la variable `protocolValue` sea del tipo `SimpleClass` en _runtime_ el co
 
 ## Manejo de Errores
 
+Se representan errores usando cualquier tipo que adopte el protocolo `Error`.
+
+```swift
+enum PrinterError: Error { // Error de impresora
+    case outOfPaper // sinPapel
+    case noToner // sinToner
+    case onFire // prendidaFuego
+}
+```
+
+Usa throw para tirar un error y throws para marcar una función que puede tirar un error. Si una función tira un error, la función retorna de inmediato y el código que llamó a la función debe manejar el error.
+
+```swift
+func send(job: Int, toPrinter printerName: String) throws -> String {
+    if printerName == "Never Has Toner" {
+        throw PrinterError.noToner
+    }
+    return "Job sent"
+}
+```
+
+Hay muchas maneras de manejar errores. Una forma es usar `do-catch`. Dentro del bloque `do`, se marca con `try` la llamada que puede tirar un error. Dentro del bloque `catch`, el error automáticamente recibe el nombre `error` para ser referenciado, a menos que se indique un nombre distinto.
+
+```swift
+do {
+    let printerResponse = try send(job: 1040, toPrinter: "Bi Sheng")
+    print(printerResponse)
+} catch {
+    print(error)
+}
+// Imprime "Job sent"
+```
+
+{% hint style="success" %}
+EXPERIMENTO  
+Cambia el nombre a la impresora a "Never Has Toner" para que la función tire un error.
+{% endhint %}
+
+Se pueden proveer varios bloques catch para manejar distintos tipos de errores.
+
+```swift
+do {
+    let printerResponse = try send(job: 1440, toPrinter: "Gutenberg")
+    print(printerResponse)
+} catch PrinterError.onFire {
+    print("I'll just put this over here, with the rest of the fire.")
+} catch let printerError as PrinterError {
+    print("Printer error: \(printerError).")
+} catch {
+    print(error)
+}
+// Imprime "Job sent"
+```
+
+{% hint style="success" %}
+EXPERIMENTO  
+Agrega código para tirar un error dentro del bloque do. ¿Qué tipo de error hay que tirar para que sea atrapado por el primer bloque catch? ¿Y el segundo?
+{% endhint %}
+
+Otra forma de manejar errores es usar `try?` para convertir el resultado en opcional. Si la función tira un error, el error es descartado y el valor devuelto es `nil`. Caso contrario, el resultado es un opcional conteniendo el valor devuelto por la función.
+
+```swift
+let printerSuccess = try? send(job: 1884, toPrinter: "Mergenthaler")
+let printerFailure = try? send(job: 1885, toPrinter: "Never Has Toner")
+```
+
+Usa defer para escribir un bloque de código que sera ejecutado luego de todo el resto del código de la función, justo antes de que la función retorne. Este código es ejecutado sin importar si la función tira un error o no. Se puede usar defer para escribir código de configuración y limpieza uno al lado del otro incluso si son ejecutados en  momentos distintos.
+
+```swift
+var fridgeIsOpen = false
+let fridgeContent = ["milk", "eggs", "leftovers"]
+
+func fridgeContains(_ food: String) -> Bool {
+    // Si abro la heladera, no nos olvidemos de cerrarla, pase lo que pase.
+    fridgeIsOpen = true
+    defer {
+        fridgeIsOpen = false
+    }
+
+    let result = fridgeContent.contains(food)
+    return result
+}
+fridgeContains("banana")
+print(fridgeIsOpen)
+// Imprime "false"
+```
+
+## Genéricos
+
+Escribe un nombre dentro de comillas angulares \( &lt; &gt; \) para declarar una función o tipo genérico.
+
+```swift
+func makeArray<Item>(repeating item: Item, numberOfTimes: Int) -> [Item] {
+    var result = [Item]()
+    for _ in 0..<numberOfTimes {
+        result.append(item)
+    }
+    return result
+}
+makeArray(repeating: "knock", numberOfTimes: 4)
+```
+
+Se pueden crear formas genéricas de funciones y métodos, así como clases, enumeraciones y estructuras.
+
+```swift
+// Reimplementando el tipo de datos Opcional de la libreria estándar de Swift
+enum OptionalValue<Wrapped> {
+    case none
+    case some(Wrapped)
+}
+var possibleInteger: OptionalValue<Int> = .none
+possibleInteger = .some(100)
+```
+
+Usa where justo antes de un cuerpo para especificar una lista de requerimientos–por ejemplo, para pedir que un tipo implemente un protocolo, para pedir que dos tipos sean iguales, o para pedir que una clase tenga una superclase en particular.
+
+```swift
+func anyCommonElements<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> Bool
+    where T.Element: Equatable, T.Element == U.Element
+{
+    for lhsItem in lhs {
+        for rhsItem in rhs {
+            if lhsItem == rhsItem {
+                return true
+            }
+        }
+    }
+    return false
+}
+anyCommonElements([1, 2, 3], [3])Integer
+```
+
+{% hint style="success" %}
+EXPERIMENTO  
+Modifica la función `anyCommonElements(_:_:)` para que sea una función que devuelve un arreglo the los elementos que ambas secuencias tengan en común.
+{% endhint %}
+
+Escribir `<T: Equatable>` es lo mismo que escribir `<T> ... where T: Equatable`.
+
