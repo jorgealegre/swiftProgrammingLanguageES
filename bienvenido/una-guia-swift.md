@@ -658,3 +658,79 @@ EXPERIMENTO
 Escribe una función que devuelva un arreglo con un mazo completo de cartas, con una carta para cada combinación de rango y palo \(`Rank` y `Suit`\).
 {% endhint %}
 
+## Protocolos y Extensiones
+
+Usa `protocol` para declarar un protocolo.
+
+```swift
+protocol ExampleProtocol {
+    var simpleDescription: String { get }
+    mutating func adjust()
+}
+```
+
+Clases, enumeraciones y estructuras pueden adoptar protocolos.
+
+```swift
+class SimpleClass: ExampleProtocol {
+    var simpleDescription: String = "A very simple class."
+    var anotherProperty: Int = 69105
+    func adjust() {
+        simpleDescription += "  Now 100% adjusted."
+    }
+}
+var a = SimpleClass()
+a.adjust()
+let aDescription = a.simpleDescription
+
+struct SimpleStructure: ExampleProtocol {
+    var simpleDescription: String = "A simple structure"
+    mutating func adjust() {
+        simpleDescription += " (adjusted)"
+    }
+}
+var b = SimpleStructure()
+b.adjust()
+let bDescription = b.simpleDescription
+```
+
+{% hint style="success" %}
+EXPERIMENTO  
+Agrega un nuevo requerimiento al protocolo. ¿Qué cambios necesitas hacer en `SimpleClass` y `SimpleStructure` para que el código compile?
+{% endhint %}
+
+Observa la palabra clave `mutating` en la declaración de `SimpleStructure` para denotar que un método modifica la estructura. La declaración de `SimpleClass` no lo necesita ya que cualquier método de una clase puede modificar su estructura interna.
+
+Usa `extension`  para agregar funcionalidades a un tipo existente, como por ejemplo métodos o propiedades computadas. Se puede usar una extensión para hacer que un tipo declarado en otro lado adopte un protocolo o incluso sobre un tipo importado de una librería o _framework_.
+
+```swift
+extension Int: ExampleProtocol {
+    var simpleDescription: String {
+        return "The number \(self)"
+    }
+    mutating func adjust() {
+        self += 42
+    }
+}
+print(7.simpleDescription)
+// Imprime "The number 7"
+```
+
+{% hint style="success" %}
+EXPERIMENTO  
+Escribe una extensión sobre el tipo `Double` que agrega una propiedad `valorAbsoluto`.
+{% endhint %}
+
+Se puede usar el nombre de un protocolo como cualquier otro tipo nombrado–por ejemplo para crear una arreglo de objetos de diferentes tipos pero que todos adoptan el mismo protocolo. Cuando trabajas con valores cuyo tipo sea un protocolo, se pierde acceso a cualquier propiedad o método declarada fuera del protocolo.
+
+```swift
+let protocolValue: ExampleProtocol = a
+print(protocolValue.simpleDescription)
+// Imprime "A very simple class.  Now 100% adjusted."
+// print(protocolValue.anotherProperty)  // Descomentar para ver el error.
+```
+
+Aunque la variable `protocolValue` sea del tipo `SimpleClass` en _runtime_ el compilador la trata como del tipo declarado, es decir, `ExampleProtocol`. Esto significa que no se puede accidentalmente acceder a propiedades o métodos que implemente la clase.
+
+## Manejo de Errores
+
