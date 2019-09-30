@@ -2,9 +2,9 @@
 
 Esto es una traducción no oficial del [libro original](https://swift.org/documentation/#the-swift-programming-language) del lenguaje de programación Swift.
 
-## Versión 4.2
+## Versión 5.1
 
-El libro está al día con la versión 4.2 del lenguaje Swift.
+El libro está al día con la versión 5.1 del lenguaje Swift.
 
 ## Swift
 
@@ -43,5 +43,5 @@ El objetivo de este libro es ayudar a que más personas tengan acceso al maravil
 
 ## Acerca del autor
 
-Mi nombre es Jorge Alegre. Soy un estudiante de Ciencias de la Computación. Estoy enamorado de lo que estudio y aun más del lenguaje de programación Swift.
+Mi nombre es Jorge Facundo Alegre. Soy un estudiante de Ciencias de la Computación de la Facultad de Matemática, Astronomía, Física y Computación de la Universidad Nacional de Córdoba. Estoy enamorado de lo que estudio y aun más del lenguaje de programación Swift.
 

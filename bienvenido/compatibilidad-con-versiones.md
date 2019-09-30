@@ -1,6 +1,6 @@
-# Compatibilidad con versiones
+# Compatibilidad de versiones
 
-Este libro describe Swift 4.1, la versión de Swift por defecto incluida en Xcode 9.2. Se puede usar Xcode 9.2 para compilar **TODO targets** escritos ya sea en Swift 4 o Swift 3.
+Este libro describe Swift 5.1, la versión de Swift por defecto incluida en Xcode 11. Se puede usar Xcode 11 para compilar código escrito ya sea en Swift 5.1, Swift 4.2 o Swift 4.
 
 > ## NOTA
 >

@@ -7,15 +7,15 @@ Swift es amigable hacia programadores nuevos. Es un lenguaje con nivel de calida
 Swift elimina gran cantidad de tipos de errores comunes en la programación al incorporar técnicas de programación modernas:
 
 * Las variables siempre están inicializadas antes de su uso.
-* Índices de arreglos son controlados para evitar errores del tipo _fuera de rango_.
+* Los índices de arreglos son controlados para evitar errores de fuera de rango.
 * Los enteros son controlados por _overflow_.
-* Opcionales garantizan de que valores `nil` \(nulos\) sean manejados explícitamente.
+* Los opcionales garantizan de que valores `nil` \(nulos\) sean manejados explícitamente.
 * La memoria es administrada automáticamente.
-* Manejo de errores permite recuperarse de manera controlada de fallas inexperadas.
+* El manejo de errores permite recuperarse de manera controlada de fallas inesperadas.
 
 Código Swift es compilado y optimizado para aprovechar al máximo el _hardware_ moderno. La sintaxis y su librería estándar han sido diseñadas en base al principio de que la manera obvia de escribir el código debería ser la más performante. Su combinación de seguridad y velocidad hacen que Swift sea una excelente opción para cualquier cosa, desde "Hola Mundo"s hasta sistemas operativos.
 
-Swift combina una poderosa inferencia de tipos y **TODO PATTERN MATCHING** con una sintaxis moderna y liviana, permitiendo que ideas complejas sean expresadas de una manera clara y consisa. Como resultado, el código no es solo facil de escribir sino que además, es facil de leer y mantener.
+Swift combina una poderosa inferencia de tipos y **TODO PATTERN MATCHING** con una sintaxis moderna y liviana, permitiendo que ideas complejas sean expresadas de una manera clara y concisa. Como resultado, el código no es solo fácil de escribir sino que además, es fácil de leer y mantener.
 
 Swift es el producto de varios años de trabajo. Su evolución continúa constantemente con nuevas funcionalidades y características. Nuestros objetivos con Swift son ambiciosos. No vemos la hora de ver qué es lo que puedes hacer con él.
 
