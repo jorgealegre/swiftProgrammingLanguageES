@@ -12,7 +12,7 @@ La palabra _swift_ significa **ágil**, **rápido**, **veloz**, etc. Al ver cód
 
 ## Objetivo
 
-El objetivo de este libro es ayudar a que más personas tengan acceso al maravilloso lenguaje de programación **Swift**. Además, me sirve a mí para pulir mis conocimientos.
+El objetivo de este libro es ayudar a que más personas tengan acceso al maravilloso lenguaje de programación **Swift**. Además, me sirve para pulir mis propios conocimientos.
 
 ## Aclaraciones
 
@@ -20,7 +20,7 @@ El objetivo de este libro es ayudar a que más personas tengan acceso al maravil
 
   ingles o que traducirlas sería más trabajo que simplemente dejarlas en ingles.
 
-  Si estás metido en el mundo del software, el ingles es inevitable. Por ejemplo,
+  Si estás metido en el mundo de la programacion, el ingles es inevitable. Por ejemplo,
 
   **string** es una palabra típica refiriendose a una cadena de caracteres.
 

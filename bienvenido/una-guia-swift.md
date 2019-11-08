@@ -13,9 +13,9 @@ print("Hello, world!")
 // Imprime "Hello, world!"
 ```
 
-Si alguna vez has escrito código en C u Objective-C, esta sintaxis te puede resultar conocida. En Swift, esta línea es un programa completo. No es necesario importar una librería externa para funcionalidades como entrada/salida o manejo de _strings_. Código escrito con alcance global es usado como punto de entrada del programa, no es necesaria una función al estilo `main()`. Tampoco son necesarios los punto y coma al final de cada declaración.
+Si alguna vez has escrito código en C u Objective-C, esta sintaxis te puede resultar conocida. En Swift, esta línea es un programa completo. No es necesario importar una librería externa para funcionalidades como _I/O_ (entrada/salida) o manejo de _strings_. Código escrito con alcance global es usado como punto de entrada del programa, no es necesaria una función al estilo `main()`. Tampoco son necesarios los punto y coma al final de cada declaración.
 
-Esta guía expondrá suficiente información para empezar a escribir código en Swift al mostrarte cómo lograr varias tareas de la programación. No te preocupes si no se entiende algo, todo lo que se instroduzca acá será explicado en mayor detalle en el resto del libro.
+Esta guía expondrá suficiente información para empezar a escribir código en Swift al demostrar cómo lograr varias tareas de programación. No te preocupes si no se entiende algo, todo lo que se introduzca acá será explicado en mayor detalle en el resto del libro.
 
 {% hint style="info" %}
 Para una mejor experiencia, abra este capítulo como un _Playground_ en Xcode. _Playgrounds_ te permiten editar el código en vivo y ver los resultados de inmediato.
@@ -25,7 +25,7 @@ Para una mejor experiencia, abra este capítulo como un _Playground_ en Xcode. _
 
 ## Valores simples
 
-Usa `let` para declarar constantes y `var` para declarar variables. El valor de una constante no es necesario al momento de compilar pero sí se le debe asignar un valor exactamente una vez. Esto significa que se puede usar constantes para darle nombre a un valor que se determina una sola vez pero se planea usar en muchos lugar.
+Usa `let` para declarar constantes y `var` para declarar variables. No es necesario conocer el valor de una constante a la hora de compilar pero sí se le debe asignar un valor exactamente una vez. Esto significa que se puede usar constantes para darle nombre a un valor que se determina una sola vez pero se planea usar en muchos lugar.
 
 ```swift
 var myVariable = 42
