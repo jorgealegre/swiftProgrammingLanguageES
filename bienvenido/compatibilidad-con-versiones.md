@@ -11,3 +11,4 @@ La mayoría de las funcionalidades de Swift 5.1 están disponibles cuando se usa
 * Inicialización de enteros usando literales son inferidas para ser del tipo correcto. Por ejemplo, `UInt64(0xffff_ffff_ffff_ffff)` evalua al valor correcto en vez de permitir un _overflow_.
 
 Un proyecto escrito en Swift 5.1 puede depender de un proyecto escrito en Swift 4.2 o 3 y vice versa. Esto significa que si se tiene un proyecto dividido en varios componentes, se puede migrar de a uno de Swift 4 a 5.1.
+

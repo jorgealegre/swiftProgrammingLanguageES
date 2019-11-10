@@ -13,7 +13,7 @@ print("Hello, world!")
 // Imprime "Hello, world!"
 ```
 
-Si alguna vez has escrito código en C u Objective-C, esta sintaxis te puede resultar conocida. En Swift, esta línea es un programa completo. No es necesario importar una librería externa para funcionalidades como _I/O_ (entrada/salida) o manejo de _strings_. Código escrito con alcance global es usado como punto de entrada del programa, no es necesaria una función al estilo `main()`. Tampoco son necesarios los punto y coma al final de cada declaración.
+Si alguna vez has escrito código en C u Objective-C, esta sintaxis te puede resultar conocida. En Swift, esta línea es un programa completo. No es necesario importar una librería externa para funcionalidades como _I/O_ \(entrada/salida\) o manejo de _strings_. Código escrito con alcance global es usado como punto de entrada del programa, no es necesaria una función al estilo `main()`. Tampoco son necesarios los punto y coma al final de cada declaración.
 
 Esta guía expondrá suficiente información para empezar a escribir código en Swift al demostrar cómo lograr varias tareas de programación. No te preocupes si no se entiende algo, todo lo que se introduzca acá será explicado en mayor detalle en el resto del libro.
 
@@ -75,7 +75,7 @@ EXPERIMENTO
 Usa \\(\) para incluir una operación de punto flotante en un _string_ y para incluir el nombre de alguien en un saludo.
 {% endhint %}
 
-Usa tres comillas dobles \(`"""`\) para _strings_ que ocupan más de una línea. La indentación de cada linea es eliminada siempre y cuando coincidan con las tres comillas que cierren el _string_. Por ejemplo: 
+Usa tres comillas dobles \(`"""`\) para _strings_ que ocupan más de una línea. La indentación de cada linea es eliminada siempre y cuando coincidan con las tres comillas que cierren el _string_. Por ejemplo:
 
 ```swift
 let quotation = """
@@ -257,7 +257,7 @@ func greet(person: String, day: String) -> String {
 greet(person: "Bob", day: "Tuesday")
 ```
 
->
+&gt;
 
 {% hint style="success" %}
 EXPERIMENTO  
@@ -701,7 +701,7 @@ Agrega un nuevo requerimiento al protocolo. ¿Qué cambios necesitas hacer en `S
 
 Observa la palabra clave `mutating` en la declaración de `SimpleStructure` para denotar que un método modifica la estructura. La declaración de `SimpleClass` no lo necesita ya que cualquier método de una clase puede modificar su estructura interna.
 
-Usa `extension`  para agregar funcionalidades a un tipo existente, como por ejemplo métodos o propiedades computadas. Se puede usar una extensión para hacer que un tipo declarado en otro lado adopte un protocolo o incluso sobre un tipo importado de una librería o _framework_.
+Usa `extension` para agregar funcionalidades a un tipo existente, como por ejemplo métodos o propiedades computadas. Se puede usar una extensión para hacer que un tipo declarado en otro lado adopte un protocolo o incluso sobre un tipo importado de una librería o _framework_.
 
 ```swift
 extension Int: ExampleProtocol {
@@ -800,7 +800,7 @@ let printerSuccess = try? send(job: 1884, toPrinter: "Mergenthaler")
 let printerFailure = try? send(job: 1885, toPrinter: "Never Has Toner")
 ```
 
-Usa defer para escribir un bloque de código que sera ejecutado luego de todo el resto del código de la función, justo antes de que la función retorne. Este código es ejecutado sin importar si la función tira un error o no. Se puede usar defer para escribir código de configuración y limpieza uno al lado del otro incluso si son ejecutados en  momentos distintos.
+Usa defer para escribir un bloque de código que sera ejecutado luego de todo el resto del código de la función, justo antes de que la función retorne. Este código es ejecutado sin importar si la función tira un error o no. Se puede usar defer para escribir código de configuración y limpieza uno al lado del otro incluso si son ejecutados en momentos distintos.
 
 ```swift
 var fridgeIsOpen = false
